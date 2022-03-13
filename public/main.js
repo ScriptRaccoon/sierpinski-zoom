@@ -16,10 +16,7 @@ const speed = 1.006;
 
 function drawLoop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.save();
-    ctx.scale(scale, scale);
-    drawSierpinski(0, 0, canvas.width, depth);
-    ctx.restore();
+    drawSierpinski(0, 0, canvas.width * scale, depth);
     scale *= speed;
     if (scale >= 3) {
         scale = 1;
@@ -46,8 +43,8 @@ function drawSierpinski(x, y, size, iteration) {
                 ctx.globalAlpha = 1;
             } else {
                 drawSierpinski(
-                    x + (i * size) / 3,
-                    y + (j * size) / 3,
+                    x + (i / 3) * size,
+                    y + (j / 3) * size,
                     size / 3,
                     iteration - 1
                 );
