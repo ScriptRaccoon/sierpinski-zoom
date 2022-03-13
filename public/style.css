@@ -15,4 +15,14 @@ body {
 
 canvas {
     background-color: limegreen;
+    animation: changeBackground 60s linear infinite alternate;
+}
+
+@keyframes changeBackground {
+    from {
+        background-color: limegreen;
+    }
+    to {
+        background-color: red;
+    }
 }
