@@ -10,6 +10,7 @@ body {
     justify-content: center;
     background-color: black;
     overflow: hidden;
+    padding: 10px;
 }
 
 canvas {

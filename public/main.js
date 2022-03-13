@@ -1,6 +1,15 @@
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
+function adjustCanvas() {
+    canvas.width = canvas.height =
+        0.8 * Math.min(window.innerWidth, window.innerHeight);
+}
+
+adjustCanvas();
+
+window.addEventListener("resize", adjustCanvas);
+
 let scale = 1;
 let depth = 5;
 const speed = 1.006;
