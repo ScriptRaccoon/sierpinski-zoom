@@ -25,12 +25,16 @@ function drawSierpinski(x, y, size, iteration) {
     for (let i = 0; i <= 2; i++) {
         for (let j = 0; j <= 2; j++) {
             if (i == 1 && j == 1) {
+                if (iteration == 1) {
+                    ctx.globalAlpha = Math.min(scale - 1, 1);
+                }
                 ctx.fillRect(
                     x + size / 3,
                     y + size / 3,
                     size / 3,
                     size / 3
                 );
+                ctx.globalAlpha = 1;
             } else {
                 drawSierpinski(
                     x + (i * size) / 3,
